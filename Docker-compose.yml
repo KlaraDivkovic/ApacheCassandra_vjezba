@@ -1,0 +1,11 @@
+services:
+  cassandra:
+    image: cassandra:5
+    ports:
+      - '9042:9042'   # CQL native
+    environment:
+      CASSANDRA_CLUSTER_NAME: MojCluster
+    volumes:
+      - cass_data:/var/lib/cassandra
+volumes:
+  cass_data:
